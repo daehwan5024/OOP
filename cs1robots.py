@@ -34,6 +34,7 @@ from PIL import Image as _Image
 from PIL import ImageDraw as _ImageDraw
 from PIL import ImageTk as _ImageTk
 
+pixel_size = 45
 _scene = None
 _world = None
 
@@ -253,8 +254,8 @@ def create_world(avenues=10, streets=10):
     if _scene:
         raise RuntimeError("A robot world already exists!")
     _scene = _g.Canvas()
-    _scene.setWidth(50 * avenues)
-    _scene.setHeight(50 * streets)
+    _scene.setWidth(pixel_size * avenues)
+    _scene.setHeight(pixel_size * streets)
     _scene.setTitle("Robot World")
     _world = _World(avenues, streets)
     _world.create_layer()
@@ -302,8 +303,8 @@ def load_world(filename=None):
         raise ValueError("Error interpreting world file.")
     _world = w
     _scene = _g.Canvas()
-    _scene.setWidth(50 * w.av)
-    _scene.setHeight(50 * w.st)
+    _scene.setWidth(pixel_size * w.av)
+    _scene.setHeight(pixel_size * w.st)
     i = filename.rfind("/")
     if i >= 0:
         filename = filename[i + 1:]
@@ -513,6 +514,17 @@ class Robot(object):
             self._refresh()
         else:
             raise RobotError("I am not carrying any beepers.")
+
+    def clear_beeper_trace(self):
+        for m in range(_world.av):
+            for n in range(_world.st):
+                if (m, n) in _world.beepers:
+                    _world.remove_beeper(m, n)
+                    self._refresh()
+
+        if self._trace:
+            _scene.remove(self._trace)
+        self._trace = None
 
 if __name__ == "__main__":
     if len(_sys.argv) > 1:

@@ -516,8 +516,8 @@ class Robot(object):
             raise RobotError("I am not carrying any beepers.")
 
     def clear_beeper_trace(self):
-        for m in range(_world.av):
-            for n in range(_world.st):
+        for m in range(_world.av+1):
+            for n in range(_world.st+1):
                 if (m, n) in _world.beepers:
                     _world.remove_beeper(m, n)
                     self._refresh()

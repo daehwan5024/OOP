@@ -41,15 +41,21 @@ def f(pre_x, pre_y):
     if robot.front_is_clear() and check(x, y+1):
         robot.move()
         current_beepers += f(x, y)
-    see_north(); robot.turn_left()
+    see_north()
+    robot.turn_left()
     if robot.front_is_clear() and check(x-1, y):
         robot.move()
         current_beepers += f(x, y)
-    see_north(); robot.turn_left(); robot.turn_left()
+    see_north()
+    robot.turn_left()
+    robot.turn_left()
     if robot.front_is_clear() and check(x, y-1):
         robot.move()
         current_beepers += f(x, y)
-    see_north(); robot.turn_left(); robot.turn_left(); robot.turn_left()
+    see_north()
+    robot.turn_left()
+    robot.turn_left()
+    robot.turn_left()
     if robot.front_is_clear() and check(x+1, y):
         robot.move()
         current_beepers += f(x, y)
@@ -57,7 +63,9 @@ def f(pre_x, pre_y):
     delta_y = pre_y - y
     see_north()
     if delta_x == 1:
-        robot.turn_left(); robot.turn_left(); robot.turn_left()
+        robot.turn_left()
+        robot.turn_left()
+        robot.turn_left()
         robot.move()
     elif delta_x == -1:
         robot.turn_left()
@@ -65,7 +73,8 @@ def f(pre_x, pre_y):
     elif delta_y == 1:
         robot.move()
     elif delta_y == -1:
-        robot.turn_left(); robot.turn_left()
+        robot.turn_left()
+        robot.turn_left()
         robot.move()
     return current_beepers
 

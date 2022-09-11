@@ -43,19 +43,25 @@ def f(pre_x, pre_y):
         return_value = f(x, y)
         current_beepers += return_value[0]
         update(possible_list, return_value[1])
-    see_north(); robot.turn_left()
+    see_north()
+    robot.turn_left()
     if robot.front_is_clear() and check(x-1, y):
         robot.move()
         return_value = f(x, y)
         current_beepers += return_value[0]
         update(possible_list, return_value[1])
-    see_north(); robot.turn_left(); robot.turn_left()
+    see_north()
+    robot.turn_left()
+    robot.turn_left()
     if robot.front_is_clear() and check(x, y-1):
         robot.move()
         return_value = f(x, y)
         current_beepers += return_value[0]
         update(possible_list, return_value[1])
-    see_north(); robot.turn_left(); robot.turn_left(); robot.turn_left()
+    see_north()
+    robot.turn_left()
+    robot.turn_left()
+    robot.turn_left()
     if robot.front_is_clear() and check(x+1, y):
         robot.move()
         return_value = f(x, y)

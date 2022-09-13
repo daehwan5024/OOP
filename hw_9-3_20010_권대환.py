@@ -10,30 +10,29 @@ class Disc:
 
 class Tower(list):
     def __init__(self, x):
+        super().__init__()
         self.x = x
 
-    def push(self, d):
-        self.append(d)
-        d.x = self.x
-        d.y = len(self) + 1
-        # 비퍼를 떨어트리기 위해 아래 코드를 이용할 것.
+    def push(self, current_disc):
+        self.append(current_disc)
+        current_disc.x = self.x
+        current_disc.y = len(self) + 1
         import cs1robots
-        gshs._x = d.x
-        gshs._y = d.y
-        for _ in range(d.n):
+        gshs._x = current_disc.x
+        gshs._y = current_disc.y
+        for _ in range(current_disc.n):
             cs1robots._world.add_beeper(gshs._x, gshs._y)
-
         pause(0.1)
         gshs._refresh()
 
     def pop(self):
-        d = super().pop()
-        gshs._x = d.x
-        gshs._y = d.y
-        for i in range(d.n):
+        curren_disc = super().pop()
+        gshs._x = curren_disc.x
+        gshs._y = curren_disc.y
+        for i in range(curren_disc.n):
             gshs.pick_beeper()
         pause(0.1)
-        return d
+        return curren_disc
 
 
 def hanoi(n, a, b, c):

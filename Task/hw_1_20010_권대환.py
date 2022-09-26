@@ -8,7 +8,6 @@ def turn_right():
     for _ in range(0, 3):
         gshs.turn_left()
 
-
 for _ in range(0, 4):
     gshs.move()
     gshs.turn_left()

@@ -1,6 +1,6 @@
 from cs1robots import *
 import random
-load_world('../homework/finalMaze2.wld')
+load_world('input_files/finalMaze2.wld')
 orient_dict = {0:'N', 1: 'E', 2: 'S', 3: 'W'}
 initial_orient = random.randint(0, 3)
 gshs1 = Robot(color="light_blue", orientation=orient_dict[initial_orient], avenue=11, street=11)
@@ -18,7 +18,7 @@ def turn_around(robot):
 
 
 command_list: str
-with open("../homework/command2.txt", "r") as f:
+with open("input_files/command2.txt", "r") as f:
     command_list = f.read()
 
 

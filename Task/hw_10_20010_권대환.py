@@ -1,23 +1,23 @@
 import turtle
 drawer = turtle.Turtle()
 window = turtle.Screen()
-rate = 0.6
+rate = 0.8
 branch_angle = 30
-drawer.pensize(3)
+drawer.pensize(2)
 
 
 def draw(line_len, start_pos, angle):
-    if line_len < 10:
+    if line_len < 25:
         return
     drawer.setheading(angle+branch_angle)
-    drawer.color('black' if line_len > 15 else 'green')
+    drawer.color('black' if line_len > 30 else 'light green')
     drawer.forward(line_len)
     draw(line_len*rate, drawer.pos(), angle+branch_angle)
     drawer.penup()
     drawer.setposition(start_pos)
     drawer.pendown()
     drawer.setheading(angle-branch_angle)
-    drawer.color('black' if line_len > 15 else 'green')
+    drawer.color('black' if line_len > 30 else 'light green')
     drawer.forward(line_len)
     draw(line_len*rate, drawer.pos(), angle-branch_angle)
     drawer.penup()

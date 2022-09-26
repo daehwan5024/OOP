@@ -57,7 +57,7 @@ def pause(delay=1.0):
 
 class _Beeper(object):
 
-    """One ore more beepers at a crossing in the world."""
+    """One or more beepers at a crossing in the world."""
 
     def __init__(self, radius, av, st, num=1):
         self.av = av

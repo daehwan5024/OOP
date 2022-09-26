@@ -10,18 +10,18 @@ window.colormode(255)
 finished = False
 
 
-def end(x: float, y: float):
+def end(*_):
     global finished
     finished = True
 
 
+window.onclick(end)
 for tur in turtles:
     tur.pencolor((random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)))
 while True:
     for drawer in turtles:
         drawer.forward(10)
         drawer.setheading(headings[random.randint(0, 3)])
-    window.onclick(end)
     window.update()
     if finished:
         break

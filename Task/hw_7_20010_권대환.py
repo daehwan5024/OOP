@@ -1,6 +1,6 @@
 from cs1robots import *
 import random
-load_world('../homework/finalMaze2.wld')
+load_world('input_files/finalMaze2.wld')
 orient_dict = {0: 'N', 1: 'E', 2: 'S', 3: 'W'}
 
 initial_orient = random.randint(0, 3)
@@ -24,7 +24,7 @@ def turn_around(robot):
         robot.turn_left()
 
 
-with open("../homework/command.txt", "r") as f:
+with open("input_files/command.txt", "r") as f:
     command1 = f.readline()
     command2 = f.readline()
 

@@ -1,5 +1,5 @@
 from cs1robots import *
-load_world('../worlds/ex36.rur.wld')
+load_world('../../worlds/ex36.rur.wld')
 gshs = Robot()
 gshs.set_trace(color='blue')
 beepers = []

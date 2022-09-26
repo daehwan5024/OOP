@@ -1,4 +1,4 @@
-from cs1robots import *
+from Task.cs1robots.cs1robots import *
 load_world('input_file/p1.wld')
 robot = Robot()
 robot.set_trace('blue')

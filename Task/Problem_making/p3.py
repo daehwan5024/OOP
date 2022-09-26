@@ -1,4 +1,4 @@
-from cs1robots import *
+from Task.cs1robots.cs1robots import *
 
 file = open('input_file/input2.in')
 input_values = file.readline().split(' ')

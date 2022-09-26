@@ -1,5 +1,5 @@
 from cs1robots import *
-load_world('../worlds/hurdles1.wld')
+load_world('../../worlds/hurdles1.wld')
 gshs = Robot()
 gshs.set_trace('blue')
 

@@ -1,5 +1,6 @@
 import random
 import cs1robots as cs
+
 n = 20
 trials = 30
 deadEnds = 0

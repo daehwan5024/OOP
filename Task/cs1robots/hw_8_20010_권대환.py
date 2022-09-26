@@ -1,17 +1,10 @@
 from cs1robots import *
 import random
-load_world('input_files/finalMaze2.wld')
-orient_dict = {0: 'N', 1: 'E', 2: 'S', 3: 'W'}
-
+load_world('../input_files/finalMaze2.wld')
+orient_dict = {0:'N', 1: 'E', 2: 'S', 3: 'W'}
 initial_orient = random.randint(0, 3)
 gshs1 = Robot(color="light_blue", orientation=orient_dict[initial_orient], avenue=11, street=11)
 gshs1.set_trace(color='blue')
-gshs1.set_pause(1)
-
-initial_orient = random.randint(0, 3)
-gshs2 = Robot(color="yellow", orientation=orient_dict[initial_orient], avenue=11, street=11)
-gshs2.set_trace(color='blue')
-gshs2.set_pause(1)
 
 
 def turn_right(robot):
@@ -24,12 +17,13 @@ def turn_around(robot):
         robot.turn_left()
 
 
-with open("input_files/command.txt", "r") as f:
-    command1 = f.readline()
-    command2 = f.readline()
+command_list: str
+with open("../input_files/command2.txt", "r") as f:
+    command_list = f.read()
 
 
 def is_circular(x, y, path, robot):
+    print("Path len: ", len(path))
     for movement in path:
         if movement == 'M':
             if robot.front_is_clear():
@@ -46,5 +40,4 @@ def is_circular(x, y, path, robot):
     return False
 
 
-print(is_circular(11, 11, command1, gshs1))
-print(is_circular(11, 11, command2, gshs2))
+print(is_circular(11, 11, command_list, gshs1))

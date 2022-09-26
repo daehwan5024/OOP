@@ -1,5 +1,5 @@
 from cs1robots import *
-load_world('../worlds/harvest1.wld')
+load_world('../../worlds/harvest1.wld')
 gshs = Robot()
 gshs.set_trace('blue')
 

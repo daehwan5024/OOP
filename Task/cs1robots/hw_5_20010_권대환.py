@@ -1,5 +1,5 @@
 from cs1robots import *
-load_world('../worlds/foru.wld')
+load_world('../../worlds/foru.wld')
 gshs = Robot(beepers=10000)
 gshs.set_trace(color='blue')
 prime = []

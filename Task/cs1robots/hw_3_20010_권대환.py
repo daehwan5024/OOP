@@ -1,5 +1,5 @@
 from cs1robots import *
-load_world('../worlds/finalMaze.wld')
+load_world('../../worlds/finalMaze.wld')
 gshs = Robot()
 gshs.set_trace(color='blue')
 while not gshs.on_beeper():

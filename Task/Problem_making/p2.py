@@ -1,4 +1,4 @@
-from cs1robots import *
+from Task.cs1robots.cs1robots import *
 
 
 def to_int(input_list):

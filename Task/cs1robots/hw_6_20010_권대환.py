@@ -1,5 +1,5 @@
 from cs1robots import *
-load_world('../worlds/frank18.wld')
+load_world('../../worlds/frank18.wld')
 gshs = Robot(color="light_blue", orientation='E', avenue=1, street=1)
 gshs.set_trace(color='blue')
 gshs2 = Robot(color="green", orientation='E', avenue=1, street=1, beepers=1000)

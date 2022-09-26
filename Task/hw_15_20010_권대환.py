@@ -49,7 +49,7 @@ def gol_step():
 
 arr = np.zeros((60, 60))
 arr[1:10, 1:37] = gshs
-fig = plt.figure(figsize=(20, 20))
+fig = plt.figure(figsize=(7, 7))
 
 im = plt.imshow(arr, cmap='gray')
 temp = gol_step()
@@ -62,4 +62,5 @@ def animate_func(i):
 
 
 anim = animation.FuncAnimation(fig, animate_func, blit=False, interval=10, frames=1000, repeat=False)
-anim.save('test.gif', fps=60)
+#anim.save('test.gif', fps=60)
+plt.show()
